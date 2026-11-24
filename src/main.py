@@ -33,6 +33,15 @@ def generate_with_symbols(length=12):
     chars = string.ascii_letters + string.digits + string.punctuation
     return "".join(random.choice(chars) for _ in range(length))
 
+def validate_length(value):
+    """Проверяет введённую длину пароля: целое число от 4 до 64."""
+    if not value.isdigit():
+        return None
+    length = int(value)
+    if length < 4 or length > 64:
+        return None
+    return length
+
 def main():
     password = generate_password()
     print("Пароль:", password)
