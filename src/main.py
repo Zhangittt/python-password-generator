@@ -33,6 +33,10 @@ def generate_with_symbols(length=12):
     chars = string.ascii_letters + string.digits + string.punctuation
     return "".join(random.choice(chars) for _ in range(length))
 
+def filter_by_strength(passwords, level):
+    """Оставляет только пароли с указанной надёжностью."""
+    return [p for p in passwords if check_strength(p) == level]
+
 def main():
     password = generate_password()
     print("Пароль:", password)
