@@ -37,6 +37,10 @@ def filter_by_strength(passwords, level):
     """Оставляет только пароли с указанной надёжностью."""
     return [p for p in passwords if check_strength(p) == level]
 
+def search_passwords(passwords, text):
+    """Ищет пароли, содержащие заданный текст."""
+    return [p for p in passwords if text in p]
+
 def main():
     password = generate_password()
     print("Пароль:", password)
