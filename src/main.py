@@ -46,7 +46,7 @@ def main():
     password = generate_password()
     print("Пароль:", password)
     print("Надёжность:", check_strength(password))
-
+    print("Добро пожаловать в генератор паролей!")
 
 if __name__ == "__main__":
     main()
