@@ -4,3 +4,8 @@
 
 ## Запуск
 python src/main.py
+
+## Функции
+- generate_password — пароль из букв и цифр
+- check_strength — оценка надёжности
+- generate_many — несколько паролей сразу
