@@ -28,6 +28,10 @@ def generate_many(count, length=12):
     """Генерирует список из нескольких паролей."""
     return [generate_password(length) for _ in range(count)]
 
+def generate_with_symbols(length=12):
+    """Генерирует пароль с буквами, цифрами и спецсимволами."""
+    chars = string.ascii_letters + string.digits + string.punctuation
+    return "".join(random.choice(chars) for _ in range(length))
 
 def main():
     password = generate_password()
