@@ -33,6 +33,7 @@ def generate_with_symbols(length=12):
     chars = string.ascii_letters + string.digits + string.punctuation
     return "".join(random.choice(chars) for _ in range(length))
 
+<<<<<<< HEAD
 def validate_length(value):
     """Проверяет введённую длину пароля: целое число от 4 до 64."""
     if not value.isdigit():
@@ -41,6 +42,15 @@ def validate_length(value):
     if length < 4 or length > 64:
         return None
     return length
+=======
+def filter_by_strength(passwords, level):
+    """Оставляет только пароли с указанной надёжностью."""
+    return [p for p in passwords if check_strength(p) == level]
+
+def search_passwords(passwords, text):
+    """Ищет пароли, содержащие заданный текст."""
+    return [p for p in passwords if text in p]
+>>>>>>> feature/search
 
 def main():
     print("Генератор паролей PassGen — добро пожаловать!")
